@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista citas medicas</title>
+    <link rel="stylesheet" href="appointment.css">
+</head>
+<body>
+    <h1>Asignacion de citas</h1>
+    <img src="images/appointment.png" alt="">
+  <form id="appointmentForm">
+   <button><label for="patientID">Número documento paciente:</label></button> 
+    <input type="text" id="patientID" required>
+    <br>
+
+    <button><label for="specialty">Especialidad:</label></button> 
+    <select id="specialty">
+      <option value="Medicina General">Medicina General</option>
+      <option value="Cardiología">Cardiología</option>
+      <option value="Medicina Interna">Medicina Interna</option>
+      <option value="Dermatología">Dermatología</option>
+      <option value="Rehabilitación Física">Rehabilitación Física</option>
+      <option value="Psicología">Psicología</option>
+      <option value="Odontología">Odontología</option>
+      <option value="Radiología">Radiología</option>
+    </select>
+    <br>
+    <input id="save" type="submit" value="Guardar">
+  </form>
+  <button id="indexButton" onclick="window.location.href = 'index.html'">inicio</button>
+</body>
+</html>

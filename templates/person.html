@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista personas</title>
+    <link rel="stylesheet" href="person.css">
+    <link rel="icon" href="favicon.ico">
+</head>
+<body>
+    <h1>Formulario de Personas</h1>
+    <img src="images/girl.webp" alt="">
+  <form id="personForm" name="personForm">
+    <button><label for="personName">Nombre:</label></button>
+    <input type="text" id="personName" required>
+    <br>
+
+    <button><label for="personID">Número de cédula:</label></button>
+    <input type="text" id="personID" required>
+    <br>
+
+    <button><label for="personLastName">Apellido:</label></button>
+    <input type="text" id="personLastName" required>
+    <br>
+
+    <button><label for="personAge">Edad:</label></button>
+    <input type="number" id="personAge" required>
+    <br>
+
+  <button><label for="personPhone">Teléfono:</label></button>
+    <input type="tel" id="personPhone" required>
+    <br>
+
+    <input id="save" type="submit" value="Guardar">
+  </form>
+<button onclick="window.location.href = 'index.html'">inicio</button>
+<script src="person-save.js"></script>
+</body>
+</html>

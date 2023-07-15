@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listado de Personas</title>
+</head>
+<body>
+  <h1>Listado de Personas</h1>
+
+  <ul id="personList"></ul>
+
+  <script>
+    // Hacer una solicitud GET al servidor para obtener los formularios de personas
+    fetch('/person-forms')
+      .then(response => response.json())
+      .then(personForms => {
+        const personList = document.getElementById('personList');
+
+        // Recorrer los formularios de personas y mostrar la información en la página
+        personForms.forEach(personForm => {
+          const listItem = document.createElement('li');
+          listItem.textContent = `Nombre: ${personForm.nombre}, Cédula: ${personForm.cedula}, Apellido: ${personForm.apellido}, Edad: ${personForm.edad}, Teléfono: ${personForm.telefono}`;
+
+          personList.appendChild(listItem);
+        });
+      })
+      .catch(error => console.error(error));
+  </script>
+</body>
+</html>

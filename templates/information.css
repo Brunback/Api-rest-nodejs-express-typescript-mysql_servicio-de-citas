@@ -1,0 +1,23 @@
+body {
+    background: linear-gradient(to bottom, rgb(116, 227, 231), rgb(190, 190, 186));
+    height: 100vh;
+    padding: 20px;
+  }
+button {
+  font-size: 30px;
+  display: block;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #33cc33, #3399ff);
+  border: 2px solid #fff;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+button:hover {
+  background: linear-gradient(to right, #3399ff, #33cc33);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  }
+ 

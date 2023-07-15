@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Citas Médicas</title>
+</head>
+<body>
+    <h1>Listado de Citas Médicas</h1>
+    <table id="citasTable">
+        <thead>
+            <tr>
+                <th>Número Documento Paciente</th>
+                <th>Especialidad</th>
+                <!-- Agrega más columnas según los datos que deseas mostrar -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se agregarán las filas con los datos de las citas médicas -->
+        </tbody>
+    </table>
+
+    <script>
+        fetch('/person') // Ruta en el servidor para obtener las citas médicas
+            .then(response => response.json())
+            .then((data: any[]) => {
+                // Procesa los datos recibidos y muestra las citas médicas en la página
+                const citasTable = document.getElementById('citasTable');
+
+                data.forEach(cita => {
+                    const row = citasTable.insertRow();
+                    row.innerHTML = `
+                        <td>${cita.numeroDocumentoPaciente}</td>
+                        <td>${cita.especialidad}</td>
+                        <!-- Agrega más celdas según los datos que deseas mostrar -->
+                    `;
+                });
+            })
+            .catch(error => {
+                console.error('Error al obtener las citas médicas:', error);
+            });
+    </script>
+</body>
+</html>

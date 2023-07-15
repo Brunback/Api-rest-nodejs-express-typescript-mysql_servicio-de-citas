@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Doctores</title>
+    <link rel="stylesheet" href="doctor.css">
+</head>
+<body>
+    <h1>Formulario de Doctores</h1>
+    <img src="images/Doctor.avif" alt=""> 
+  <form id="doctorForm">
+    <button> <label for="doctorName">Nombre:</label></button></button>
+    <input type="text" id="doctorName" required>
+    <br>
+
+    <button><label for="doctorLastName">Apellido:</label></button>
+    <input type="text" id="doctorLastName" required>
+    <br>
+
+    <button><label for="doctorSpecialty">Especialidad:</label></button>
+    <select id="doctorSpecialty">
+      <option value="Medicina General">Medicina General</option>
+      <option value="Cardiología">Cardiología</option>
+      <option value="Medicina Interna">Medicina Interna</option>
+      <option value="Dermatología">Dermatología</option>
+      <option value="Rehabilitación Física">Rehabilitación Física</option>
+      <option value="Psicología">Psicología</option>
+      <option value="Odontología">Odontología</option>
+      <option value="Radiología">Radiología</option>
+    </select>
+    <br>
+
+    <button><label for="doctorOffice">Consultorio:</label></button>
+    <input type="text" id="doctorOffice" required>
+    <br>
+
+    <button><label for="doctorEmail">Correo de contacto:</label></button>
+  
+    <input type="email" id="doctorEmail" required>
+    <br>
+    <input id="save" type="submit" value="Guardar">
+</form>
+<button onclick="window.location.href = 'index.html'">inicio</button>
+</body>
+</html>

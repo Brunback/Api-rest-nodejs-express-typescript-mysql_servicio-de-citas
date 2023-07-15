@@ -1,0 +1,68 @@
+body {
+    background: linear-gradient(to bottom, rgb(116, 227, 231), rgb(190, 190, 186));
+    height: 100vh;
+    padding: 20px;
+  }
+  img {
+    max-width: 50%;
+    float:right;
+    margin-top: 20px;
+    margin-right: 20px;
+
+  }
+  
+  button {
+    margin-top: 20px;
+    font-size: 30px;
+    background: linear-gradient(to right, #33cc33, #3399ff);
+    border: 2px solid #fff;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+  }
+  button:hover {
+    background: linear-gradient(to right, #3399ff, #33cc33);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    color: #f31b1b;
+    }
+    #personName{
+        font-size: 30px;
+        width: 300px;
+    }
+    #personID{
+        margin-left: 200px;
+        font-size: 30px;
+        width: 300px;
+    }
+    #personLastName{
+        font-size: 30px;
+        width: 300px;
+    }
+    #personAge{
+        font-size: 30px;
+        width: 300px;
+    }
+    #personPhone{
+        font-size: 30px;
+        width: 300px;
+    }
+    #save{ 
+        margin-left: 400px;
+        margin-top: 20px;
+        font-size: 33px;
+        width: 130px;
+        background: linear-gradient(to right, #cc5233, #85ff33);
+          border: 2px solid #fff;
+          border-radius: 5px;
+          padding: 10px 3px;
+          color: #0c3d99;
+       }
+       #save:hover{
+      
+        background: linear-gradient(to right, #a333ff, #cc6333);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+        color: #deec1b;
+       }
