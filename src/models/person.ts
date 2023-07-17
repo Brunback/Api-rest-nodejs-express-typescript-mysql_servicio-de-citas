@@ -8,7 +8,6 @@ class PersonModel extends Model {
   public apellido!: string;
   public edad!: number;
   public telefono!: number;
-  // Otros campos y métodos del modelo
 }
 
 PersonModel.init(

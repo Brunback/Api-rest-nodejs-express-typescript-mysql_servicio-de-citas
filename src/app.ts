@@ -4,8 +4,9 @@ import cors from "cors";
 import sequelize from './config/mysql';
 import { router } from "./routers/person-router";
 import { router2} from "./routers/doctors-router";
-/*import { router3} from "/routers/appointment-router";*/
 import { router4 } from "./routers/auth-router";
+import { router3} from "./routers/appointment-router";
+
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -23,7 +24,7 @@ sequelize.sync()
 app.use('/favicon.ico', express.static('ruta/al/archivo/favicon.ico'));
 app.use(router);
 app.use(router2);
-/*app.use(router3);*/
+app.use(router3);
 app.use(router4);
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => console.log(`listo por el puerto ${PORT}`));

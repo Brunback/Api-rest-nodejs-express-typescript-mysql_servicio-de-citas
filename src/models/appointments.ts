@@ -3,12 +3,14 @@ import sequelize from '../config/mysql';
 
 interface AppointmentModelAttributes {
   id: number;
-  person_id: number;
-  doctores_id: number;
+  person_cedula: number;
+  doctores_especialidad: string;
   person_nombre: string;
   person_apellido: string;
   doctores_nombre: string;
-  doctores_apellido: string;}
+  doctores_apellido: string;
+  doctores_consultorio:string;
+}
 
 class AppointmentModel extends Model<AppointmentModelAttributes> {}
 
@@ -19,24 +21,58 @@ AppointmentModel.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    person_id: {
+    person_cedula: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
+        model: 'PersonModel',
         key: 'id',
       },
     },
-    doctores_id: {
-      type: DataTypes.INTEGER,
+    doctores_especialidad: {
+      type: DataTypes.STRING,
       allowNull: false,
-      key: 'id',
+      references: {
+        model: 'DoctorModel', 
+        key: 'id',
+      },
     },
-    person_nombre: '',
-    person_apellido: '',
-    doctores_nombre: '',
-    doctores_apellido: ''
+    person_nombre: {
+      type: DataTypes.STRING,
+      references: {
+        model: 'PersonModel',
+        key: 'id',
+      },
+    }, 
+    person_apellido: {
+      type: DataTypes.STRING,
+      references: {
+        model: 'PersonModel',
+        key: 'id',
+      },
+    },
+    doctores_nombre: {
+      type: DataTypes.STRING,
+      references: {
+        model: 'DoctorModel', 
+        key: 'id',
+      }, 
+    },
+    doctores_apellido: {
+      type: DataTypes.STRING,
+      references: {
+        model: 'DoctorModel', 
+        key: 'id',
+      }, 
+    },
+    doctores_consultorio: {
+      type: DataTypes.STRING,
+      references: {
+        model: 'DoctorModel', 
+        key: 'id',
+      },
+    }
   },
- 
   {
     sequelize,
     modelName: 'AppointmentModel',
@@ -44,7 +80,6 @@ AppointmentModel.init(
     timestamps: false,
     underscored: true,
   }
-
 );
 
 export default AppointmentModel;

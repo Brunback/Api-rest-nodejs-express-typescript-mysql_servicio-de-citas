@@ -3,10 +3,10 @@ import { getItems, getItem, postItem, updateItem, deleteItem,getListadoPacientes
 import { logMiddleware  } from "../middleware/log";
 const router = Router();
 
-router.get("/person", getItems);
+router.get("/person", logMiddleware ,getItems);
 router.get("/person/:id", logMiddleware ,getItem);
-router.post("/person", postItem);
-router.put("/person/:id", updateItem);
-router.delete("/person/:id", deleteItem);
+router.post("/person",logMiddleware , postItem);
+router.put("/person/:id", logMiddleware ,updateItem);
+router.delete("/person/:id",logMiddleware , deleteItem);
 
 export { router };
