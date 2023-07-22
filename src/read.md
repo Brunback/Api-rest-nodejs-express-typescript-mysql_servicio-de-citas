@@ -18,3 +18,38 @@ Pasos realizados:
     Frontend en desarrollo:
     Aunque aún no se ha conectado el frontend, se ha preparado una carpeta de templates para futuras integraciones. Una vez conectado, el frontend podrá interactuar con la API para mostrar y manipular los datos almacenados en la base de datos.
 
+tablas en myswql 
+
+create database Consultas;
+use Consultas;
+CREATE TABLE person (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(50) NOT NULL,
+  cedula INT NOT NULL,
+  apellido VARCHAR(50) NOT NULL,
+  edad INT NOT NULL,
+  email VARCHAR(100) NOT NULL
+  INDEX idx_cedula(cedula)
+);
+CREATE TABLE doctores (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(50) NOT NULL,
+  apellido VARCHAR(50) NOT NULL,
+  especialidad VARCHAR(50) NOT NULL,
+  consultorio VARCHAR(50) NOT NULL,
+  email VARCHAR(100) NOT NULL
+  INDEX idx_especialidad(especialidad)
+);
+
+CREATE TABLE citas (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  person_cedula INT NOT NULL,
+  doctores_especialidad VARCHAR(50) NOT NULL,
+  person_nombre VARCHAR(100),
+  person_apellido VARCHAR(100),
+  doctores_nombre VARCHAR(100),
+  doctores_apellido VARCHAR(100),
+  doctores_consultorio VARCHAR(50) NOT NULL,
+  FOREIGN KEY (person_cedula) REFERENCES person(cedula),
+  FOREIGN KEY (doctores_especialidad) REFERENCES doctores(especialidad)
+);
