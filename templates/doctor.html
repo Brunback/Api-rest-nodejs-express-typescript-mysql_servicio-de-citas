@@ -5,21 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista Doctores</title>
     <link rel="stylesheet" href="doctor.css">
+    
 </head>
 <body>
     <h1>Formulario de Doctores</h1>
     <img src="images/Doctor.avif" alt=""> 
   <form id="doctorForm">
     <button> <label for="doctorName">Nombre:</label></button></button>
-    <input type="text" id="doctorName" required>
+    <input type="text" id="doctorName" name='nombre'placeholder="Nombre"required>
     <br>
 
     <button><label for="doctorLastName">Apellido:</label></button>
-    <input type="text" id="doctorLastName" required>
+    <input type="text" id="doctorLastName" name='apellido'placeholder="Apellido"required>
     <br>
 
     <button><label for="doctorSpecialty">Especialidad:</label></button>
-    <select id="doctorSpecialty">
+    <select id="doctorSpecialty" name='especialidad' placeholder="Especialidad">
       <option value="Medicina General">Medicina General</option>
       <option value="Cardiología">Cardiología</option>
       <option value="Medicina Interna">Medicina Interna</option>
@@ -32,15 +33,16 @@
     <br>
 
     <button><label for="doctorOffice">Consultorio:</label></button>
-    <input type="text" id="doctorOffice" required>
+    <input type="text" id="doctorOffice" name='consultorio' placeholder="Consultorio"required>
     <br>
 
     <button><label for="doctorEmail">Correo de contacto:</label></button>
   
-    <input type="email" id="doctorEmail" required>
+    <input type="email" id="doctorEmail" name='email' placeholder="Email"required>
     <br>
     <input id="save" type="submit" value="Guardar">
 </form>
 <button onclick="window.location.href = 'index.html'">inicio</button>
+<script src="doctor.js"></script>
 </body>
 </html>

@@ -9,7 +9,12 @@ import { router3} from "./routers/appointment-router";
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.options('*', cors());
+const corsOptions = {
+  origin: 'http://127.0.0.1:5500'
+};
+
+app.use(cors(corsOptions));
 sequelize.sync()
   .then(() => {
     console.log('Conexión establecida con la base de datos');
@@ -21,7 +26,6 @@ sequelize.sync()
     res.setHeader('Content-Type', 'application/json');
     next();
   });
-app.use('/favicon.ico', express.static('ruta/al/archivo/favicon.ico'));
 app.use(router);
 app.use(router2);
 app.use(router3);
